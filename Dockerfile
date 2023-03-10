@@ -98,7 +98,10 @@ RUN EXTS=`curl https://extdist.wmflabs.org/dist/extensions/ | awk 'BEGIN { FS = 
     && curl -Ls https://github.com/Universal-Omega/DynamicPageList3/archive/REL1_35.tar.gz | tar xz --strip=1 -C /var/www/html/extensions/DynamicPageList \
     && echo "Installing patched Math extension from https://github.com/ubc/mediawiki-extensions-Math/archive/REL1_35.tar.gz" \
     && mkdir -p /var/www/html/extensions/Math \
-    && curl -Ls https://github.com/ubc/mediawiki-extensions-Math/archive/REL1_35.tar.gz | tar xz --strip=1 -C /var/www/html/extensions/Math
+    && curl -Ls https://github.com/ubc/mediawiki-extensions-Math/archive/REL1_35.tar.gz | tar xz --strip=1 -C /var/www/html/extensions/Math \
+    && echo "Installing patched UserMerge extension from https://github.com/wikimedia/mediawiki-extensions-UserMerge/archive/REL1_35.tar.gz" \
+    && mkdir -p /var/www/html/extensions/UserMerge \
+    && curl -Ls https://github.com/wikimedia/mediawiki-extensions-UserMerge/archive/REL1_35.tar.gz | tar xz --strip=1 -C /var/www/html/extensions/UserMerge
 
 
 RUN mkdir -p /data \
