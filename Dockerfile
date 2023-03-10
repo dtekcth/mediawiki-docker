@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:7.4-fpm
 
 ENV WIKI_VERSION_MAJOR_MINOR=1.35
 ENV WIKI_VERSION_BUGFIX=9
@@ -99,7 +99,7 @@ RUN EXTS=`curl https://extdist.wmflabs.org/dist/extensions/ | awk 'BEGIN { FS = 
     && echo "Installing patched Math extension from https://github.com/ubc/mediawiki-extensions-Math/archive/REL1_35.tar.gz" \
     && mkdir -p /var/www/html/extensions/Math \
     && curl -Ls https://github.com/ubc/mediawiki-extensions-Math/archive/REL1_35.tar.gz | tar xz --strip=1 -C /var/www/html/extensions/Math \
-    && echo "Installing patched UserMerge extension from https://github.com/wikimedia/mediawiki-extensions-UserMerge/archive/REL1_35.tar.gz" \
+    && echo "Installing https://github.com/wikimedia/mediawiki-extensions-UserMerge/archive/REL1_35.tar.gz" \
     && mkdir -p /var/www/html/extensions/UserMerge \
     && curl -Ls https://github.com/wikimedia/mediawiki-extensions-UserMerge/archive/REL1_35.tar.gz | tar xz --strip=1 -C /var/www/html/extensions/UserMerge
 
